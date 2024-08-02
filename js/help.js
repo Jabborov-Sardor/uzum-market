@@ -1,13 +1,13 @@
-import prodactCards from "./data.js";
-import { elWrapper, elTemplate } from "./main.js";
+import allProdactCards from "./data.js";
+import { elWrap, Template } from "./main.js";
 
 const findEl = (element, parent = document) => {
   return parent.querySelector(element);
 };
-function renderProdects(list = prodactCards, parent = elWrapper) {
+function renderTopProdects(list = allProdactCards, parent = elWrap) {
   parent.textContent = null;
   list.forEach((product) => {
-    const newTemp = elTemplate.content.cloneNode(true);
+    const newTemp = Template.content.cloneNode(true);
     const elImg = findEl(".img1", newTemp);
     const elLike = findEl(".img2", newTemp);
     const elTitel = findEl(".p", newTemp);
@@ -21,7 +21,7 @@ function renderProdects(list = prodactCards, parent = elWrapper) {
       elLike.classList.remove("fa-regular");
       elLike.classList.add("fa-solid");
     }
-    elImg.src = product.img1;
+    elImg.src = product.img;
     elTitel.textContent = product.title;
     elHeart.textContent = product.heart;
     elReyt.textContent = product.content;
@@ -33,4 +33,4 @@ function renderProdects(list = prodactCards, parent = elWrapper) {
   });
 }
 
-export { findEl, renderProdects };
+export { findEl, renderTopProdects };
