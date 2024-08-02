@@ -1,0 +1,48 @@
+const prodactCards = [
+  {
+    id: 1,
+    title: "Kungaboqar yog'i Oila tanlovi,tozalangan va xidsizlantirilgan",
+    heart: "⭐",
+    content: "4.9 (64sharhlar)",
+    rasrochka: "19716 som/oyiga",
+    realPrice: "250 000",
+    skidka: "169 000 som",
+    img1: "./img/kungaboqar.svg",
+    isLiked: false,
+  },
+  {
+    id: 2,
+    title: "Erkaklar shimlari, klassik, tekis chinos",
+    content: "4.9 (64sharhlar)",
+    heart: "⭐",
+    rasrochka: "19716 som/oyiga",
+    realPrice: "250 000",
+    skidka: "169 000 som",
+    img1: "./img/kungaboqar.svg",
+    isLiked: false,
+  },
+  {
+    id: 3,
+    title: "Erkaklar shimlari, klassik, tekis chinos",
+    content: "4.9 (64sharhlar)",
+    heart: "⭐",
+    rasrochka: "19716 som/oyiga",
+    realPrice: "250 000",
+    skidka: "169 000 som",
+    img1: "./img/kungaboqar.svg",
+    isLiked: false,
+  },
+  {
+    id: 4,
+    title: "Erkaklar shimlari, klassik, tekis chinos",
+    content: "4.9 (64sharhlar)",
+    heart: "⭐",
+    rasrochka: "19716 som/oyiga",
+    realPrice: "250 000",
+    skidka: "169 000 som",
+    img1: "./img/kungaboqar.svg",
+    isLiked: false,
+  },
+];
+
+export default prodactCards;
