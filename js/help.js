@@ -10,7 +10,7 @@ function renderTopProdects(list = allProdactCards, parent = elWrap) {
     const newTemp = Template.content.cloneNode(true);
     const elImg = findEl(".img1", newTemp);
     const elLike = findEl(".img2", newTemp);
-    const elTitel = findEl(".p", newTemp);
+    const elTitel = findEl(".Yozuv", newTemp);
     const elHeart = findEl(".heart", newTemp);
     const elReyt = findEl(".reyt", newTemp);
     const elRasrochka = findEl(".ras", newTemp);
@@ -27,7 +27,7 @@ function renderTopProdects(list = allProdactCards, parent = elWrap) {
     elReyt.textContent = product.content;
     elRasrochka.textContent = product.rasrochka;
     elRealPrice.textContent = product.realPrice;
-    elSkitka.textContent = product.skidka;
+    elSkitka.textContent = product.discount;
 
     parent.appendChild(newTemp);
   });

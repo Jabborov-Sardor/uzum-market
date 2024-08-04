@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Uzum Internet Magazin</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,59 +24,138 @@
     <link rel="icon" href="imgs/uzum.webp" type="image/x-icon" />
     <link rel="stylesheet" href="main.css" />
     <!-- <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
     /> -->
   </head>
   <body>
-    <div class="nav-as">
-      <div class="nav-as-left">
-        <img class="loc" src="img/Vector (1).svg" alt="" />
-
+    <!-- <input class="anpss" type="text" name="" id="" /> -->
+    <div class="laK_qat">
+      <div class="laK_qat_chap">
+        <img class="ikon_L" src="img/Vector (1).svg" alt="" />
         <p>Shahar:</p>
         <p>Toshkent</p>
-        <span></span>
         <p>Topshirish punktlari</p>
       </div>
-      <div class="nav-as-right">
-        <p class="uzBuy">Uzumda soting</p>
+      <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="add">
+        ADD
+      </button>
+      <div class="laK_qat_ung">
+        <p class="uzBuys">Uzumda soting</p>
         <p>Savol-javoblar</p>
         <p>Buyurtmalarim</p>
-        <div class="language">
+        <div class="til">
           <img
-            class="uzbImg"
+            class="uzb_Img"
             src="img/span.icon__selected-before (32).svg"
             alt=""
           />
-          <select class="Uz" name="O'zbekcha" id="">
+          <select class="davn" name="O'zbekcha" id="">
             <option value="O'zbekcha">O'zbekcha</option>
             <option value="Русский">Русский</option>
           </select>
         </div>
       </div>
     </div>
+    <!-- ///////////////////////////////////// -->
 
-    <div class="container">
-      <div class="navbar">
+    <!-- //////////// bootstrap modal boshi  ////////////////// -->
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <input id="inp_1" placeholder="title" class="inp_s" type="text" />
+              <input
+                id="inp_2"
+                placeholder="3.6 (523 sharhlar)"
+                class="inp_s"
+                type="text"
+              />
+              <input
+                id="inp_3"
+                placeholder="... so'm/oyiga"
+                class="inp_s"
+                type="text"
+              />
+              <input
+                id="inp_4"
+                placeholder="RealPrice"
+                class="inp_s"
+                type="text"
+              />
+              <input
+                id="inp_5"
+                placeholder="Chegirma Narx so'm"
+                class="inp_s"
+                type="text"
+              />
+            </form>
+          </div>
+          <div class="modal-footer">
+            <!-- // muxum //// -->
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <!-- /// muxum -->
+            <button
+              id="btn_change"
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Save changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //////////// bootstrap modal oxiri  ////////////////// -->
+
+    <!-- /////////////////////////////////////// -->
+    <div class="contner">
+      <div class="nev_bar">
         <img class="logo" src="img/div.middle-header-main-logo.svg" alt="" />
-        <div class="katalog">
+        <div class="katalug">
           <img class="katalImg" src="img/div.catalog-icon.svg" alt="" />
           <p>Katalog</p>
         </div>
-        <div class="divInp">
+        <div class="div_Inp">
           <input
-            class="inpp"
+            class="in_pp"
             placeholder="Mahsulotlar va turkumlarni izlash"
             type="text"
           />
-          <button class="btn">
+          <button class="b_tn">
             <img class="lupaImg" src="img/Button.svg" alt="" />
           </button>
         </div>
-        <div class="nav-right">
-          <div class="kirish">
+        <div class="nev-rayt">
+          <div class="kirish_w">
             <img class="man" src="img/mannn.svg" alt="" />
             <p>Kirish</p>
           </div>
@@ -84,18 +169,35 @@
           </div>
         </div>
       </div>
+      <!-- /////////////////////////// -->
+      <div class="nev_as_sec">
+        <div class="nev_as_ikki_imp_page">
+          <img src="img/asImg.svg" alt="" />
+          <p><b>Muddatli to'lov</b></p>
+        </div>
+        <p>Elektronika</p>
+        <p>Maishiy texnika</p>
+        <p>Kiyim</p>
+        <p>Poyabzallar</p>
+        <p>Aksesuarlar</p>
+        <p>Go'zallik va Parvarish</p>
+        <p>Salomatlik</p>
+        <p>Uy-ro'zg'or buyumlari</p>
+        <p>Qurilish va ta'mirlash</p>
+      </div>
+      <!-- ////////////////////////// -->
       <img src="img/div.banner-block.svg" alt="" />
 
       <div class="cards"></div>
+      <!-- /////////////// template////////////////////// -->
       <template class="temp">
         <div class="card">
           <img class="img1" src="./img/kungaboqar.svg" alt="" />
           <div><i class="img2 fa-regular fa-heart"></i></div>
-          <p class="p">
+          <p class="Yozuv">
             Kungaboqar yog'i Oila tanlovi, <br />tozalangan va
             xidsizlantirilgan.
           </p>
-
           <div class="reyting">
             <div class="star">
               <p class="heart">⭐</p>
@@ -107,19 +209,21 @@
                 <s class="real-price">250 000</s>
                 <p class="skitka">169 000 so'm</p>
               </div>
-              <button>
+              <!-- <button>
                 <img class="buy_img" src="img/div.slot (1).svg" alt="" />
-              </button>
+              </button> -->
             </div>
           </div>
         </div>
       </template>
     </div>
-    <script type="module" src="js/main.js"></script>
+    <!-- ////// bootstrap script /////// -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <!-- ///////////// -->
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>
