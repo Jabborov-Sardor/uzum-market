@@ -75,11 +75,6 @@ body {
   background: none;
 }
 
-/* .bnm {
-  align-items: center;
-  text-align: center;
-} */
-
 /* /////////////////////////////////// */
 .nev_as_sec {
   border: solid 1px gray;
@@ -128,6 +123,9 @@ body {
   display: flex;
   text-align: center;
   align-items: center;
+}
+.img2 {
+  color: blue;
 }
 .in_pp {
   width: 400px;
@@ -223,8 +221,6 @@ body {
 }
 .buy_left {
   display: flex;
-  gap: 5px;
-  gap: 150px;
 }
 .buy_img {
   background-color: white;
@@ -237,6 +233,3 @@ body {
   top: 13px;
   left: 205px;
 }
-/* .fa-solid {
-  color: red;
-} */

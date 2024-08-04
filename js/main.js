@@ -3,25 +3,27 @@ import { findEl, renderTopProdects } from "./help.js";
 export const elWrap = findEl(".cards");
 export const Template = findEl(".temp");
 
+// const prodactsss = JSON.stringify(allProdactCards);
+// localStorage.setItem("prodacts", prodactsss);
+// console.log(localStorage.getItem("like"));
+
 renderTopProdects();
-
-localStorage.setItem("like", likedArray);
-console.log(localStorage.getItem("like"));
-
-const likedArray = [];
+const saveProdactss = [];
 elWrap.addEventListener("click", (e) => {
   if (e.target.classList.contains("img2")) {
-    likedArray.length = 0;
+    saveProdactss.length = 0;
     const id = e.target.dataset.id;
     allProdactCards.forEach((product) => {
-      if (product.isLiked) {
-        product.isLiked = !product.isLiked;
-      }
       if (id == product.id) {
-        likedArray.push(product);
+        product.isLiked = !product.isLiked;
+        saveProdactss.push(product);
       }
     });
+    const json = JSON.stringify(saveProdactss);
+    localStorage.setItem("like", json);
+    console.log(localStorage.getItem("like"));
   }
+  renderTopProdects();
 });
 
 const elButChange = document.querySelector("#btn_change");
@@ -39,7 +41,7 @@ elButChange.addEventListener("click", (e) => {
     content: elContent.value,
     rasrochka: elPayR.value,
     realPrice: elRealP.value,
-    discount: elDiscount.value,
+    discount: elDiscount.value + " so'm",
     img: "./img/kungaboqar.svg",
     isLiked: false,
   };
@@ -47,4 +49,3 @@ elButChange.addEventListener("click", (e) => {
   allProdactCards.push(newAllProdactCards);
   renderTopProdects();
 });
-renderTopProdects();
