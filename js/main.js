@@ -1,11 +1,12 @@
 import allProdactCards from "./data.js";
 import { findEl, renderTopProdects } from "./help.js";
-export const elWrap = findEl(".cards");
+export const elWrap = findEl(".carts");
 export const Template = findEl(".temp");
+const elButChange = findEl("#btn_change");
+const elDelete = findEl("#btn_del");
+const elEdit = findEl("#btn_edit");
 
-// const prodactsss = JSON.stringify(allProdactCards);
-// localStorage.setItem("prodacts", prodactsss);
-// console.log(localStorage.getItem("like"));
+localStorage.setItem("prod", JSON.stringify(allProdactCards));
 
 renderTopProdects();
 const saveProdactss = [];
@@ -21,18 +22,17 @@ elWrap.addEventListener("click", (e) => {
     });
     const json = JSON.stringify(saveProdactss);
     localStorage.setItem("like", json);
-    console.log(localStorage.getItem("like"));
   }
   renderTopProdects();
 });
 
-const elButChange = document.querySelector("#btn_change");
 elButChange.addEventListener("click", (e) => {
-  const elTit = document.getElementById("inp_1");
-  const elContent = document.getElementById("inp_2");
-  const elPayR = document.getElementById("inp_3");
-  const elRealP = document.getElementById("inp_4");
-  const elDiscount = document.getElementById("inp_5");
+  const elImg = document.getElementById("inp_1");
+  const elTit = document.getElementById("inp_2");
+  const elContent = document.getElementById("inp_3");
+  const elPayR = document.getElementById("inp_4");
+  const elRealP = document.getElementById("inp_5");
+  const elDiscount = document.getElementById("inp_6");
 
   const newAllProdactCards = {
     id: allProdactCards.length + 1,
@@ -47,5 +47,8 @@ elButChange.addEventListener("click", (e) => {
   };
 
   allProdactCards.push(newAllProdactCards);
+
+  localStorage.setItem("prod", JSON.stringify(allProdactCards));
+
   renderTopProdects();
 });
