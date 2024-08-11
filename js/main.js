@@ -1,54 +1,97 @@
-import allProdactCards from "./data.js";
-import { findEl, renderTopProdects } from "./help.js";
-export const elWrap = findEl(".carts");
-export const Template = findEl(".temp");
-const elButChange = findEl("#btn_change");
-const elDelete = findEl("#btn_del");
-const elEdit = findEl("#btn_edit");
+import { allProdactCards } from "./data.js";
 
-localStorage.setItem("prod", JSON.stringify(allProdactCards));
+const findEl = (element, parent = document) => {
+  return parent.querySelector(element);
+};
 
-renderTopProdects();
-const saveProdactss = [];
+////// Swiper kodi boshi ////////
+import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
+const swiper = new Swiper(".swiper", {
+  // Optional parameters
+  direction: "vertical",
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: ".swiper-pagination",
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: ".swiper-scrollbar",
+  },
+});
+
+////// Swiper kodi tugashi ////////
+
+const elWrap = findEl(".carts");
+const Template = findEl(".temp");
+const searchInp = findEl(".in_pp");
+const searchBut = findEl(".b_tn");
+
+export function renderProducts(list = allProdactCards, parent = elWrap) {
+  parent.textContent = null;
+  list.forEach((product) => {
+    const newTemp = Template.content.cloneNode(true);
+    const elImg = findEl(".img1", newTemp);
+    const elLike = findEl(".img2", newTemp);
+    const elTitel = findEl(".Yozuv", newTemp);
+    const elHeart = findEl(".heart", newTemp);
+    const elReyt = findEl(".reyt", newTemp);
+    const elRasrochka = findEl(".ras", newTemp);
+    const elRealPrice = findEl(".real-price", newTemp);
+    const elSkitka = findEl(".skitka", newTemp);
+
+    elLike.dataset.id = product.id;
+    if (product.isLiked) {
+      elLike.classList.remove("fa-regular");
+      elLike.classList.add("fa-solid");
+    }
+    elImg.src = product.img;
+    elTitel.textContent = product.title;
+    elHeart.textContent = product.heart;
+    elReyt.textContent = product.content;
+    elRasrochka.textContent = product.rasrochka;
+    elRealPrice.textContent = product.realPrice;
+    elSkitka.textContent = product.discount;
+
+    parent.appendChild(newTemp);
+  });
+}
+
+renderProducts();
+
+////////////// Search  /////////////
+
+function searchProducts() {
+  const query = searchInp.value.toLowerCase();
+  const filteredProducts = allProdactCards.filter((product) =>
+    product.title.toLowerCase().includes(query)
+  );
+  renderProducts(filteredProducts);
+}
+
+searchInp.addEventListener("input", searchProducts);
+
+searchBut.addEventListener("click", searchProducts);
+
+/////////// search tugadi /////////////
+
 elWrap.addEventListener("click", (e) => {
   if (e.target.classList.contains("img2")) {
-    saveProdactss.length = 0;
     const id = e.target.dataset.id;
     allProdactCards.forEach((product) => {
       if (id == product.id) {
         product.isLiked = !product.isLiked;
-        saveProdactss.push(product);
+        renderProducts();
+        localStorage.setItem("prod", JSON.stringify(allProdactCards));
       }
     });
-    const json = JSON.stringify(saveProdactss);
-    localStorage.setItem("like", json);
   }
-  renderTopProdects();
-});
-
-elButChange.addEventListener("click", (e) => {
-  const elImg = document.getElementById("inp_1");
-  const elTit = document.getElementById("inp_2");
-  const elContent = document.getElementById("inp_3");
-  const elPayR = document.getElementById("inp_4");
-  const elRealP = document.getElementById("inp_5");
-  const elDiscount = document.getElementById("inp_6");
-
-  const newAllProdactCards = {
-    id: allProdactCards.length + 1,
-    title: elTit.value,
-    heart: "⭐",
-    content: elContent.value,
-    rasrochka: elPayR.value,
-    realPrice: elRealP.value,
-    discount: elDiscount.value + " so'm",
-    img: "./img/kungaboqar.svg",
-    isLiked: false,
-  };
-
-  allProdactCards.push(newAllProdactCards);
-
-  localStorage.setItem("prod", JSON.stringify(allProdactCards));
-
-  renderTopProdects();
 });

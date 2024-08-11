@@ -26,7 +26,7 @@ p {
   justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 235px;
+  gap: 510px;
   border: none;
   background-color: rgba(128, 128, 128, 0.1);
 }
@@ -36,16 +36,6 @@ p {
   text-align: center;
   gap: 10px;
   font-size: 15px;
-}
-.add {
-  width: 40px;
-  height: 25px;
-  outline: none;
-  border: none;
-  border-radius: 5px;
-  color: #1f2026ab;
-  align-items: center;
-  background-color: #6f00ff42;
 }
 
 .inp_s {
@@ -172,6 +162,15 @@ p {
   gap: 10px;
   color: #1f2026;
   font-size: 14px;
+}
+
+.is_favorits {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  color: #1f2026;
+  font-size: 14px;
+  gap: 10px;
 }
 .savat {
   height: 40px;

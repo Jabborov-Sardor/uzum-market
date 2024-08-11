@@ -3,15 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Uzum Market ADMIN</title>
-    <!-- //// botstrap///// -->
+    <title>Uzum Market Saralanganlar</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <!-- ////////// -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,7 +21,7 @@
       crossorigin="anonymous"
     ></script>
     <!-- <link rel="icon" href="imgs/uzum.webp" type="image/x-icon" /> -->
-    <link rel="stylesheet" href="/admin_css.css" />
+    <link rel="stylesheet" href="/index.css" />
     <!-- <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -32,6 +30,7 @@
     /> -->
   </head>
   <body>
+    <!-- //////////////////// LAKATSI NAV /////////////// -->
     <div class="laK_qat">
       <div class="laK_qat_chap">
         <img class="ikon_L" src="img/Vector (1).svg" alt="" />
@@ -59,7 +58,7 @@
         </div>
       </div>
     </div>
-    <!-- ///////////////////////////////////// -->
+    <!-- /////////////////// LAKATSIYA NAV  TUGADI ////////////////// -->
 
     <!-- //////////////// Navbar qismi /////////////////////// -->
     <div class="contner">
@@ -67,6 +66,7 @@
         <a href="index.html">
           <img class="logo" src="img/div.middle-header-main-logo.svg" alt="" />
         </a>
+
         <div class="katalug">
           <img class="katalImg" src="img/div.catalog-icon.svg" alt="" />
           <p>Katalog</p>
@@ -82,11 +82,12 @@
           </button>
         </div>
         <div class="nev-rayt">
-          <div class="kirish_w">
+          <a href="./admin.html" class="kirish_w">
             <img class="man" src="img/mannn.svg" alt="" />
             <p>Kirish</p>
-          </div>
+          </a>
           <div class="saralangan">
+            class="is_favorits">
             <img class="heart" src="img/heart.svg" alt="" />
             <p>Saralangan</p>
           </div>
@@ -96,7 +97,7 @@
           </div>
         </div>
       </div>
-      <!-- ///////////////////////// -->
+      <!-- ///////////// NAVBAR QISMI TUGADI //////////// -->
       <!-- style="height: 400px; width: 1230px; border-radius: 10px" -->
       <!-- /////////////////////////// -->
       <div class="nev_as_sec">
@@ -115,54 +116,45 @@
         <p>Qurilish va ta'mirlash</p>
       </div>
       <!-- ////////////////////////// -->
-
-      <!-- ///////////////form inp////////////////// -->
-      <form class="form form-control">
-        <input
-          id="inp_1"
-          placeholder="Img URL"
-          class="form-control mt-3 border-black inp_s"
-          type="text"
-        />
-        <input
-          id="inp_2"
-          placeholder="title"
-          class="form-control mt-3 border-black inp_s"
-          type="text"
-        />
-        <input
-          id="inp_3"
-          placeholder="3.6 (523 sharhlar)"
-          class="form-control mt-3 border-black inp_s"
-          type="text"
-        />
-        <input
-          id="inp_4"
-          placeholder="... so'm/oyiga"
-          name="real_price"
-          class="form-control mt-3 border-black inp_s"
-          type="number"
-        />
-        <input
-          id="inp_5"
-          placeholder="RealPrice"
-          name="discount_price"
-          class="form-control mt-3 border-black inp_s"
-          type="number"
-        />
-        <input
-          id="inp_6"
-          placeholder="Chegirma Narx so'm"
-          name="monthly"
-          class="form-control inp_s mt-3 border-black"
-          type="number"
-        />
-        <button id="btn_change" type="button" class="btn btn-primary">
-          Save changes
+      <!--//////////// SWIPER /////////-->
+      <div
+        id="carouselExampleControlsNoTouching"
+        class="carousel slide"
+        data-bs-touch="false"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/div.banner-block.svg" class="d-block" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="img/div.banner-block.svg" class="d-block" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="img/div.banner-block.svg" class="d-block" alt="..." />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleControlsNoTouching"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
         </button>
-      </form>
-      <!-- //////////////////////form inpni tugashi////////////////////// -->
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleControlsNoTouching"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <!-- /////////// SWIPER KODI TUGASHI //////////////////////////// -->
       <div class="carts"></div>
+      <!-- /////////////// template////////////////////// -->
       <template class="temp">
         <div class="cart_1">
           <img class="img1" src="./img/kungaboqar.svg" alt="" />
@@ -181,105 +173,14 @@
                 <s class="real-price">250 000</s>
                 <p class="skitka">169 000 so'm</p>
               </div>
+              <!-- <button>
+                <img class="buy_img" src="img/div.slot (1).svg" alt="" />
+              </button> -->
             </div>
-          </div>
-          <div class="del_edit">
-            <button id="btn_del" class="btn_del">Del</button>
-            <button
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-              id="btn_edit"
-              class="btn_edit"
-            >
-              Edit
-            </button>
           </div>
         </div>
       </template>
-      <!-- Modal -->
-      <div
-        class="modal fade"
-        id="exampleModal"
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">
-                Modal title
-              </h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <img src="" id="edit-img" alt="" />
-              <form id="form-edit">
-                <input
-                  id="m_inp_1"
-                  placeholder="img URL"
-                  name="img"
-                  class="m_inp_s"
-                  type="text"
-                />
-                <input
-                  id="m_inp_2"
-                  placeholder="title"
-                  name="title"
-                  class="m_inp_s"
-                  type="text"
-                />
-                <input
-                  id="m_inp_3"
-                  placeholder="... so'm/oyiga"
-                  class="m_inp_s"
-                  name="oyiga"
-                  type="text"
-                />
-                <input
-                  id="m_inp_4"
-                  placeholder="RealPrice"
-                  name="RealPrice"
-                  class="m_inp_s"
-                  type="text"
-                />
-                <input
-                  id="m_inp_5"
-                  placeholder="Chegirma Narx so'm"
-                  name="discount_price_1"
-                  class="m_inp_s"
-                  type="text"
-                />
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-              <button
-                id="btn_change"
-                type="button"
-                class="btn btn-primary"
-                data-bs-dismiss="modal"
-              >
-                Save changes
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- //////////// bootstrap modal oxiri  ////////////////// -->
     </div>
-
     <!-- ////// bootstrap script /////// -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -287,6 +188,7 @@
       crossorigin="anonymous"
     ></script>
     <!-- ///////////// -->
-    <script type="module" src="./js/admin.js"></script>
+    <!-- <script type="module" src="js/main.js"></script> -->
+    <script type="module" src="js/favorits.js"></script>
   </body>
 </html>

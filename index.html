@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Uzum Market Magazin</title>
+    <!--  JS kutibxona link -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -20,17 +26,10 @@
       src="https://kit.fontawesome.com/ed1498d79c.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="main.css" />
-    <link rel="icon" href="imgs/uzum.webp" type="image/x-icon" />
     <link rel="stylesheet" href="/index.css" />
-    <!-- <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-    crossorigin="anonymous"
-    /> -->
   </head>
   <body>
+    <!-- //////////////////// LAKATSI NAV /////////////// -->
     <div class="laK_qat">
       <div class="laK_qat_chap">
         <img class="ikon_L" src="img/Vector (1).svg" alt="" />
@@ -38,9 +37,6 @@
         <p>Toshkent</p>
         <p>Topshirish punktlari</p>
       </div>
-      <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="add">
-        ADD
-      </button>
       <div class="laK_qat_ung">
         <p class="uzBuys">Uzumda soting</p>
         <p>Savol-javoblar</p>
@@ -58,88 +54,7 @@
         </div>
       </div>
     </div>
-    <!-- ///////////////////////////////////// -->
-
-    <!-- //////////// bootstrap modal boshi  ////////////////// -->
-    <!-- Button trigger modal -->
-
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <input
-                id="inp_1"
-                placeholder="img URL"
-                class="inp_s"
-                type="text"
-              />
-              <input id="inp_2" placeholder="title" class="inp_s" type="text" />
-              <input
-                id="inp_3"
-                placeholder="3.6 (523 sharhlar)"
-                class="inp_s"
-                type="text"
-              />
-              <input
-                id="inp_4"
-                placeholder="... so'm/oyiga"
-                class="inp_s"
-                type="text"
-              />
-              <input
-                id="inp_5"
-                placeholder="RealPrice"
-                class="inp_s"
-                type="text"
-              />
-              <input
-                id="inp_6"
-                placeholder="Chegirma Narx so'm"
-                class="inp_s"
-                type="text"
-              />
-            </form>
-          </div>
-          <div class="modal-footer">
-            <!-- // muxum //// -->
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <!-- /// muxum -->
-            <button
-              id="btn_change"
-              type="button"
-              class="btn btn-primary"
-              data-bs-dismiss="modal"
-            >
-              Save changes
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- //////////// bootstrap modal oxiri  ////////////////// -->
+    <!-- /////////////////// LAKATSIYA NAV  TUGADI ////////////////// -->
 
     <!-- //////////////// Navbar qismi /////////////////////// -->
     <div class="contner">
@@ -164,9 +79,12 @@
             <img class="man" src="img/mannn.svg" alt="" />
             <p>Kirish</p>
           </a>
+          <a href=""> </a>
           <div class="saralangan">
-            <img class="heart" src="img/heart.svg" alt="" />
-            <p>Saralangan</p>
+            <a href="isFavorits.html" class="is_favorits">
+              <img class="heart" src="img/heart.svg" alt="" />
+              <p>Saralangan</p>
+            </a>
           </div>
           <div class="savat">
             <img class="savatImg" src="img/savat.svg" alt="" />
@@ -174,7 +92,7 @@
           </div>
         </div>
       </div>
-      <!-- ///////////////////////// -->
+      <!-- ///////////// NAVBAR QISMI TUGADI //////////// -->
       <!-- style="height: 400px; width: 1230px; border-radius: 10px" -->
       <!-- /////////////////////////// -->
       <div class="nev_as_sec">
@@ -193,43 +111,36 @@
         <p>Qurilish va ta'mirlash</p>
       </div>
       <!-- ////////////////////////// -->
-      <!--//////////// SWIPER /////////-->
-      <div
-        id="carouselExampleControlsNoTouching"
-        class="carousel slide"
-        data-bs-touch="false"
-      >
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="img/div.banner-block.svg" class="d-block" alt="..." />
+
+      <!-- //////// Swiper js kodi boshi ///// -->
+      <div class="swiper" style="width: 1240px; height: 320px">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <img src="img/div.banner-block.svg" alt="" />
           </div>
-          <div class="carousel-item">
-            <img src="img/div.banner-block.svg" class="d-block" alt="..." />
+          <div class="swiper-slide">
+            <img src="img/div.banner-block.svg" alt="" />
           </div>
-          <div class="carousel-item">
-            <img src="img/div.banner-block.svg" class="d-block" alt="..." />
+          <div class="swiper-slide">
+            <img src="img/div.banner-block.svg" alt="" />
           </div>
+          ...
         </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleControlsNoTouching"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleControlsNoTouching"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
       </div>
-      <!-- /////////// SWIPER KODI TUGASHI //////////////////////////// -->
+
+      <!-- //////// Swiper js kodi tugashi ///// -->
+
       <div class="carts"></div>
       <!-- /////////////// template////////////////////// -->
       <template class="temp">
@@ -241,13 +152,13 @@
           </p>
           <div class="reyting">
             <div class="star1">
-              <p class="heart">⭐</p>
-              <p class="reyt">4.9</p>
+              <p class="m-0 p-0 heart">⭐</p>
+              <p class="m-0 p-0 reyt">4.9</p>
             </div>
-            <p class="ras">19716 so'm/oyiga</p>
+            <p class="m-0 p-0 ras">19716 so'm/oyiga</p>
             <div class="buy_left">
               <div class="buy_l">
-                <s class="real-price">250 000</s>
+                <s class="m-0 p-0 real-price">250 000</s>
                 <p class="skitka">169 000 so'm</p>
               </div>
               <!-- <button>
@@ -258,6 +169,13 @@
         </div>
       </template>
     </div>
+
+    <!-- //////// JS kutibxona  script -->
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- //////// JS kutibxona  script tugashi -->
+
     <!-- ////// bootstrap script /////// -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
