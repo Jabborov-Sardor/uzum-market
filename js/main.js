@@ -8,8 +8,9 @@ const findEl = (element, parent = document) => {
 import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
 const swiper = new Swiper(".swiper", {
   // Optional parameters
-  direction: "vertical",
+  direction: "horizontal",
   loop: true,
+  effect: "cards",
 
   // If we need pagination
   pagination: {
@@ -21,11 +22,14 @@ const swiper = new Swiper(".swiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+  autoplay: {
+    delay: 3000,
+  },
 
   // And if we need scrollbar
-  scrollbar: {
-    el: ".swiper-scrollbar",
-  },
+  // scrollbar: {
+  //   el: ".swiper-scrollbar",
+  // },
 });
 
 ////// Swiper kodi tugashi ////////
