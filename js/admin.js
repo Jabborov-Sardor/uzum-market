@@ -1,4 +1,10 @@
-import { allProdactCards } from "./data.js";
+import { allProdactCards as prodactCards } from "./data.js";
+
+let allProdactCards =
+  prodactCards.length > 0
+    ? prodactCards
+    : JSON.parse(localStorage.getItem("prodcuts"));
+
 const findEl = (element, parent = document) => {
   return parent.querySelector(element);
 };
@@ -57,7 +63,11 @@ elButChange.addEventListener("click", () => {
   const elDiscount = document.getElementById("inp_6");
 
   const newAllProdactCards = {
-    id: allProdactCards.length + 1,
+    id:
+      allProdactCards.length > 0
+        ? allProdactCards[allProdactCards.length - 1].id
+        : 1,
+    // id: allProdactCards.length + 1,
     title: elTit.value,
     heart: "⭐",
     content: elContent.value,
@@ -87,6 +97,20 @@ elWrap.addEventListener("click", (e) => {
       }
     });
   }
+  /////////// DELETE //////////
+  if (e.target.className.includes("btn_del")) {
+    const id = Number(e.target.dataset.id);
+
+    let filtrProdacts = allProdactCards.filter((product) => product.id !== id);
+    console.log(filtrProdacts);
+
+    allProdactCards = filtrProdacts;
+    localStorage.setItem("prod", JSON.stringify(allProdactCards));
+    renderProducts(allProdactCards);
+  }
+
+  /////////// DELETE TUGADI //////////
+
   ///////////////// EDIT //////////////
 
   if (e.target.className.includes("btn_edit")) {
@@ -116,8 +140,10 @@ elWrap.addEventListener("click", (e) => {
           product.discount = elEditDiscount.value;
         }
       });
-      localStorage.setItem("products", JSON.stringify(product));
+      localStorage.setItem("prod", JSON.stringify(product));
       renderProducts();
     });
   }
 });
+
+///////////////// EDIT TUGADI //////////////

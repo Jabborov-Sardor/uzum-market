@@ -1,4 +1,4 @@
-export const allProdactCards = localStorage.getItem("prod")
+export let allProdactCards = localStorage.getItem("prod")
   ? JSON.parse(localStorage.getItem("prod"))
   : [
       {

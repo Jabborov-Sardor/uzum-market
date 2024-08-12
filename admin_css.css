@@ -6,6 +6,7 @@
 }
 body {
   width: 100%;
+  height: 100vw;
 }
 p {
   margin-top: 19px;
@@ -233,9 +234,7 @@ p {
   display: flex;
   align-items: center;
   text-align: center;
-  justify-content: space-between;
-  /* padding: 10px; */
-  gap: 60px;
+  gap: 10px;
 }
 .btn_del {
   width: 70px;
