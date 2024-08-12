@@ -5,7 +5,8 @@ const findEl = (element, parent = document) => {
 const elWrap = findEl(".carts");
 const Template = findEl(".temp");
 const elButChange = findEl("#btn_change");
-const formEdit = findEl("#form-edit");
+const elEditBtn = findEl("#save_chang");
+// const formEdit = findEl("#form-edit");
 
 const editImg = findEl("#edit-img");
 
@@ -93,28 +94,26 @@ elWrap.addEventListener("click", (e) => {
 
     const elEditImg = document.getElementById("m_inp_1");
     const elEditTitle = document.getElementById("m_inp_2");
-    console.log(elEditTitle);
     const elEditPayM = document.getElementById("m_inp_3");
     const elEditRealP = document.getElementById("m_inp_4");
-    const elEditDiscount = document.getElementById("inp_5");
+    const elEditDiscount = document.getElementById("m_inp_5");
 
-    const product = product.filter((product) => product.id === id)[0];
+    const product = allProdactCards.filter((product) => product.id === id)[0];
 
     editImg.src = product.img;
     elEditImg.value = product.img;
     elEditTitle.value = product.title;
-    elEditPayM.value = product.monthly_payment;
-    elEditRealP.value = product.real_price;
-    elEditDiscount.value = product.discount_price;
+    elEditPayM.value = product.rasrochka;
+    elEditRealP.value = product.realPrice;
+    elEditDiscount.value = product.discount;
 
-    elEditBtn.addEventListener("click", (evt) => {
-      product.forEach((product) => {
+    elEditBtn.addEventListener("click", (e) => {
+      allProdactCards.forEach((product) => {
         if (product.id === id) {
           product.title = elEditTitle.value;
-          product.img = elEditImg.img.value;
-          product.real_price = elEditRealP.value;
-          product.discount_price = elEditDiscount.value;
-          product.monthly_payment = elEditPayM.value;
+          product.rasrochka = elEditPayM.value;
+          product.realPrice = elEditRealP.value;
+          product.discount = elEditDiscount.value;
         }
       });
       localStorage.setItem("products", JSON.stringify(product));
